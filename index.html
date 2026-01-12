@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cover Slide</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Cairo', sans-serif;
+    }
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    /* Decorative Abstract Shapes reflecting the logo's curvature */
+    .bg-shape-top {
+      position: absolute;
+      top: -150px;
+      left: -100px;
+      width: 600px;
+      height: 600px;
+      background-color: #f5fafd; /* Very light blue */
+      border-radius: 50%;
+      z-index: 1;
+      opacity: 0.6;
+    }
+    
+    .bg-shape-bottom-right {
+      position: absolute;
+      bottom: -100px;
+      right: -50px;
+      width: 500px;
+      height: 500px;
+      background-color: #eaf8f9; /* Very light teal */
+      border-radius: 50%;
+      z-index: 1;
+      opacity: 0.6;
+    }
+
+    /* Strong brand color accents */
+    .accent-bar-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      display: flex;
+    }
+    .accent-segment-1 {
+      width: 60%;
+      height: 100%;
+      background-color: #1F3A66; /* Navy Blue */
+    }
+    .accent-segment-2 {
+      width: 40%;
+      height: 100%;
+      background-color: #28A69E; /* Teal/Turquoise */
+    }
+
+    /* Mimicking the dots from the logo */
+    .dot-deco {
+      position: absolute;
+      border-radius: 50%;
+      z-index: 2;
+    }
+    .d1 { width: 20px; height: 20px; background-color: #28A69E; top: 120px; left: 120px; opacity: 0.2; }
+    .d2 { width: 12px; height: 12px; background-color: #1F3A66; top: 150px; left: 100px; opacity: 0.2; }
+    .d3 { width: 30px; height: 30px; background-color: #28A69E; bottom: 120px; right: 120px; opacity: 0.1; }
+    .d4 { width: 15px; height: 15px; background-color: #1F3A66; bottom: 160px; right: 160px; opacity: 0.15; }
+
+    .content-wrapper {
+      z-index: 10;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+    }
+    
+    .logo-container {
+      margin-bottom: 3rem;
+      /* Subtle shadow for depth */
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+    }
+    
+    .logo-img {
+      height: 200px;
+      object-fit: contain;
+    }
+
+    .title-box {
+      border-right: 6px solid #28A69E;
+      padding-right: 2rem;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .main-title {
+      color: #1F3A66;
+      font-size: 3.8rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .sub-title {
+      color: #28A69E;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .divider {
+      width: 100px;
+      height: 4px;
+      background-color: #e5e7eb;
+      margin: 2.5rem 0;
+      border-radius: 2px;
+      align-self: center;
+    }
+
+    .date-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      padding: 0.75rem 3rem;
+      border-radius: 999px;
+      color: #4b5563;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+  </style>
+</head>
+<body>
+<div class="slide-container">
+<!-- Background Elements -->
+<div class="bg-shape-top"></div>
+<div class="bg-shape-bottom-right"></div>
+<!-- Decorative Dots -->
+<div class="dot-deco d1"></div>
+<div class="dot-deco d2"></div>
+<div class="dot-deco d3"></div>
+<div class="dot-deco d4"></div>
+<!-- Main Content -->
+<div class="content-wrapper">
+<div class="logo-container">
+<img alt="شعار اتحاد الغرف التجارية السعودية" class="logo-img" src="https://www.genspark.ai/api/files/s/FMHVMwOG"/>
+</div>
+<div class="title-container w-full flex flex-col items-center">
+<div class="title-box">
+<h1 class="main-title">لائحة اللجان الوطنية<br/>واللجان القطاعية</h1>
+<p class="sub-title">في الغرف التجارية</p>
+</div>
+</div>
+<div class="divider"></div>
+<div class="date-badge">
+<p>1445هـ / 2023م</p>
+</div>
+</div>
+<!-- Bottom Accent Strip -->
+<div class="accent-bar-bottom">
+<div class="accent-segment-1"></div>
+<div class="accent-segment-2"></div>
+</div>
+</div>
+</body>
+</html>
