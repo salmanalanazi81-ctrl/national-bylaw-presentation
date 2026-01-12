@@ -1,72 +1,59 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>لائحة اللجان الوطنية واللجان القطاعية – اتحاد الغرف السعودية</title>
+  <meta charset="utf-8">
+  <title>لائحة اللجان الوطنية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+
   <style>
-    :root{--bg:#0b1220;--bar:#0f172a;--btn:#111827;--bd:#334155}
-    body{margin:0;background:var(--bg);color:#fff;font-family:system-ui,Segoe UI,Tahoma,Arial}
-    .bar{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bar);position:sticky;top:0;z-index:10}
-    .left{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .btn{background:var(--btn);border:1px solid var(--bd);color:#fff;padding:10px 12px;border-radius:10px;cursor:pointer}
-    .btn:disabled{opacity:.4;cursor:not-allowed}
-    .meta{opacity:.85;font-size:14px}
-    .wrap{display:flex;align-items:center;justify-content:center;padding:14px}
-    img{max-width:min(1400px,96vw);max-height:calc(100vh - 110px);border-radius:14px;box-shadow:0 12px 35px rgba(0,0,0,.45);background:#fff}
-    .hint{opacity:.75;font-size:12px}
+    body { font-family: "Cairo", Tahoma, Arial; }
+    .reveal h1, .reveal h2 { color:#0b3c5d }
+    .reveal section { text-align:right }
   </style>
 </head>
 <body>
 
-  <div class="bar">
-    <div class="left">
-      <button class="btn" id="prev">السابق</button>
-      <button class="btn" id="next">التالي</button>
-      <span class="meta" id="counter"></span>
-      <span class="hint">اختصارات: ← / → أو PgUp / PgDn</span>
-    </div>
-    <div class="meta">اتحاد الغرف السعودية</div>
+<div class="reveal">
+  <div class="slides">
+
+    <section>
+      <h1>لائحة اللجان الوطنية<br>واللجان القطاعية</h1>
+      <p>اتحاد الغرف السعودية</p>
+      <small>1445هـ / 2023م</small>
+    </section>
+
+    <section>
+      <h2>الأهداف</h2>
+      <ul>
+        <li>تمثيل القطاع الخاص</li>
+        <li>نقل المرئيات للجهات ذات العلاقة</li>
+        <li>دعم تطوير الأنظمة</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>المواد التنظيمية</h2>
+      <p>
+        ضع هنا نص المادة كاملًا،  
+        ويمكنك النزول داخل الشريحة إذا طال النص.
+      </p>
+    </section>
+
   </div>
+</div>
 
-  <div class="wrap">
-    <img id="slide" alt="Slide" />
-  </div>
+<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    slideNumber: true,
+    rtl: true
+  });
+</script>
 
-  <script>
-    const total = 27;
-
-    function fileName(i){
-      return `slides/slide-${String(i).padStart(3,'0')}.png`;
-    }
-
-    let idx = 1;
-    const img = document.getElementById('slide');
-    const counter = document.getElementById('counter');
-    const prev = document.getElementById('prev');
-    const next = document.getElementById('next');
-
-    function render(){
-      img.src = fileName(idx);
-      counter.textContent = `الشريحة ${idx} من ${total}`;
-      prev.disabled = idx === 1;
-      next.disabled = idx === total;
-    }
-
-    prev.onclick = () => { if(idx>1){ idx--; render(); } };
-    next.onclick = () => { if(idx<total){ idx++; render(); } };
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft' || e.key === 'PageUp') prev.click();
-      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') next.click();
-    });
-
-    // دعم قراءة رقم الشريحة من الرابط: ?s=10
-    const url = new URL(window.location.href);
-    const s = parseInt(url.searchParams.get('s') || '1', 10);
-    if (!Number.isNaN(s) && s>=1 && s<=total) idx = s;
-
-    render();
-  </script>
 </body>
 </html>
